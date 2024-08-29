@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ post.title }}</title>
+</head>
+<body>
+    <header>
+        <h1>{{ post.title }}</h1>
+    </header>
+    <main>
+        <article>
+            <p>{{ post.text }}</p>
+            <p><strong>Рейтинг:</strong> {{ post.rating }}</p>
+        </article>
+        <section>
+            <h2>Комментарии</h2>
+            {% for comment in post.comment_set.all %}
+                <div>
+                    <p><strong>{{ comment.user.username }}:</strong> {{ comment.text }}</p>
+                    <p><strong>Рейтинг:</strong> {{ comment.rating }}</p>
+                </div>
+            {% empty %}
+                <p>Комментариев нет.</p>
+            {% endfor %}
+        </section>
+    </main>
+    <footer>
+        <a href="{% url 'news:home' %}">На главную</a>
+    </footer>
+</body>
+</html>

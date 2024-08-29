@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Статьи по категории: {{ category.name }}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/style.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Статьи в категории "{{ category.name }}"</h1>
+        {% if articles %}
+            <ul>
+                {% for article in articles %}
+                    <li>
+                        <a href="{% url 'news:article_detail' article.id %}">{{ article.title }}</a>
+                        <p>{{ article.published_date }}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>Нет статей в этой категории.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

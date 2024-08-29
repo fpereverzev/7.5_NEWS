@@ -1,0 +1,15 @@
+<!-- subscriptions.html -->
+<form method="post">
+    {% csrf_token %}
+    <h2>Manage your subscriptions</h2>
+    {% for category in categories %}
+        <div>
+            <label>
+                <input type="checkbox" name="categories" value="{{ category.id }}"
+                {% if category.id in user_subscriptions %}checked{% endif %}>
+                {{ category.name }}
+            </label>
+        </div>
+    {% endfor %}
+    <button type="submit">Update Subscriptions</button>
+</form>

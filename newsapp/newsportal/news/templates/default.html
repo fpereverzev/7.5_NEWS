@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новостной портал</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+<header>
+    <div class="container">
+        <h1>Новостной портал</h1>
+        <nav>
+            <a href="{% url 'news:home' %}" class="btn">Главная</a>
+            <a href="{% url 'news:create_article' %}" class="btn">Создать статью</a>
+            <a href="{% url 'news:create_post' %}" class="btn">Создать пост</a>
+            <a href="{% url 'news:subscriptions' %}" class="btn">Управление подписками</a>
+        </nav>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <section>
+            <h2>Категории</h2>
+            <ul class="category-list">
+                {% for category in categories %}
+                <li><a href="{% url 'news:category_articles' category.id %}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+    </div>
+</main>
+<footer>
+    <div class="container">
+        <p>&copy; 2024 Новостной портал</p>
+    </div>
+</footer>
+</body>
+</html>
