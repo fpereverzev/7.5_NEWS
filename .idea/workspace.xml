@@ -4,7 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e380c35c-7b63-40b0-854d-d38a4f9d395e" name="Changes" comment="upd" />
+    <list default="true" id="e380c35c-7b63-40b0-854d-d38a4f9d395e" name="Changes" comment="upd">
+      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/0315c3aa02be287dd1dbf079f6b22d24.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/0315c3aa02be287dd1dbf079f6b22d24.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/4c9cac3ebf008c55ec1fb3e3c992afe0.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/4c9cac3ebf008c55ec1fb3e3c992afe0.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/96f05816abc9879d149c5a6fb516c796.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/96f05816abc9879d149c5a6fb516c796.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/970fe90174a01b863a3ec74833134b47.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/970fe90174a01b863a3ec74833134b47.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/ac1100063eea1c6878250bccb4998ba6.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/ac1100063eea1c6878250bccb4998ba6.djcache" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -38,6 +44,7 @@
     "DefaultHtmlFileTemplate": "HTML File",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "last_opened_file_path": "/Users/macp/Desktop/7.5_NEW-master-master",
     "settings.editor.selected.configurable": "configurable.group.project"
   }
