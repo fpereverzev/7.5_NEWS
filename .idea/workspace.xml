@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e380c35c-7b63-40b0-854d-d38a4f9d395e" name="Changes" comment="upd">
-      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/0315c3aa02be287dd1dbf079f6b22d24.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/0315c3aa02be287dd1dbf079f6b22d24.djcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/4c9cac3ebf008c55ec1fb3e3c992afe0.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/4c9cac3ebf008c55ec1fb3e3c992afe0.djcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/96f05816abc9879d149c5a6fb516c796.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/96f05816abc9879d149c5a6fb516c796.djcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/970fe90174a01b863a3ec74833134b47.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/970fe90174a01b863a3ec74833134b47.djcache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/cache_files/ac1100063eea1c6878250bccb4998ba6.djcache" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/cache_files/ac1100063eea1c6878250bccb4998ba6.djcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/newsapp/newsportal/newsportal/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/newsapp/newsportal/newsportal/settings.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,16 +35,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "DefaultHtmlFileTemplate": "HTML File",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "last_opened_file_path": "/Users/macp/Desktop/7.5_NEW-master-master",
-    "settings.editor.selected.configurable": "configurable.group.project"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/macp/Desktop/7.5_NEW-master-master&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.project&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/newsapp/newsportal/news/templates" />
@@ -115,8 +111,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/newsapp/newsportal/newsportal/settings.py</url>
-          <line>46</line>
+          <line>161</line>
           <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/newsapp/newsportal/newsportal/settings.py</url>
+          <line>11</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
