@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Регистрация</h1>
+            <nav>
+                <a href="{% url 'news:home' %}" class="btn">Главная</a>
+                <a href="{% url 'account_login' %}" class="btn">Вход</a>
+                <a href="{% url 'account_signup' %}" class="btn">Регистрация</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+

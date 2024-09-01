@@ -16,6 +16,9 @@
             <a href="{% url 'news:create_article' %}" class="btn">Создать статью</a>
             <a href="{% url 'news:create_post' %}" class="btn">Создать пост</a>
             <a href="{% url 'news:subscriptions' %}" class="btn">Управление подписками</a>
+            <a href="{% url 'account_signup' %}" class="btn">Регистрация</a> <!-- Измените URL на прямой путь -->
+            <a href="{% url 'account_login' %}" class="btn">Вход</a>
+            <a href="{% url 'account_logout' %}" class="btn">Выход</a>
         </nav>
     </div>
 </header>

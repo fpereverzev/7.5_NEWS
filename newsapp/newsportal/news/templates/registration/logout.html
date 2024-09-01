@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выход</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Выход из аккаунта</h1>
+            <nav>
+                <a href="{% url 'news:home' %}" class="btn">Главная</a>
+                <a href="{% url 'account_login' %}" class="btn">Вход</a>
+                <a href="{% url 'account_signup' %}" class="btn">Регистрация</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <section>
+                <h2>Вы успешно вышли из системы</h2>
+                <p>Вы вышли из своего аккаунта. Спасибо, что пользовались нашим сервисом!</p>
+                <p><a href="{% url 'news:home' %}">Вернуться на главную страницу</a></p>
+                <p>Хотите войти снова? <a href="{% url 'account_login' %}">Войти</a></p>
+            </section>
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Новостной портал</p>
+        </div>
+    </footer>
+</body>
+</html>

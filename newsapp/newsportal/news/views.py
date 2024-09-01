@@ -6,10 +6,14 @@ from django.contrib import messages
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
 from django.core.paginator import Paginator
+from django.core.mail import send_mail
+from django.urls import reverse_lazy
+from django.contrib.auth.forms import UserCreationForm
+from django.views import View
 
 
 # Общее кэширование списка категорий
-@cache_page(30)
+@cache_page(10)
 def home(request):
     categories = cache.get('home_categories')
     if not categories:
@@ -81,7 +85,7 @@ def news_detail(request, news_id):
     return render(request, 'news/news_detail.html', {'post': post})
 
 
-@cache_page(30)
+@cache_page(10)
 def article_detail(request, article_id):
     article = cache.get(f'article_{article_id}')
     if not article:
@@ -110,3 +114,26 @@ def article_list(request):
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'news/article_list.html', {'page_obj': page_obj})
+
+
+# Представление для регистрации пользователя
+class RegisterView(View):
+    def get(self, request):
+        form = UserCreationForm()
+        return render(request, 'registration/register.html', {'form': form})
+
+    def post(self, request):
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            # Отправка письма на email пользователя
+            send_mail(
+                'Успешная регистрация',
+                'Вы успешно зарегистрировались на нашем сайте!',
+                'sfexample123@yandex.ru',  # Ваш email-адрес
+                [user.email],  # Email пользователя
+                fail_silently=False,
+            )
+            messages.success(request, "Регистрация прошла успешно! Письмо отправлено на ваш email.")
+            return redirect('login')  # Перенаправление на страницу входа после регистрации
+        return render(request, 'registration/register.html', {'form': form})

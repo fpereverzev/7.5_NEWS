@@ -11,5 +11,7 @@ urlpatterns = [
     path('news/<int:news_id>/', views.news_detail, name='news_detail'),
     path('articles/<int:article_id>/', views.article_detail, name='article_detail'),
     path('category/<int:category_id>/', views.category_articles, name='category_articles'),
-    path('articles/', views.article_list, name='article_list'),  # Добавлен путь для списка статей
+    path('articles/', views.article_list, name='article_list'),
+    path('register/', views.RegisterView.as_view(), name='register'),  # Путь для регистрации
 ]
+

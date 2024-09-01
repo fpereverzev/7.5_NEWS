@@ -204,7 +204,6 @@ TEMPLATES = [
     },
 ]
 
-
 WSGI_APPLICATION = 'newsportal.wsgi.application'
 
 # Database
@@ -258,23 +257,20 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 # Путь, где будут искаться статические файлы в разработке
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 
-
-
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTHENTICATION_BACKENDS = [
+AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'allauth.account.auth_backends.AuthenticationBackend',
-]
+)
 
-LOGIN_REDIRECT_URL = '/news/'  # перенаправление на страницу новостей после входа
-LOGOUT_REDIRECT_URL = '/'  # перенаправление на главную страницу после выхода
-
+LOGIN_REDIRECT_URL = '/'
+LOGOUT_REDIRECT_URL = '/'
 ACCOUNT_EMAIL_REQUIRED = True
-ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
@@ -297,7 +293,6 @@ MANAGERS = (
     ('Fedor', 'fedorfed315@yandex.ru'),
 )
 
-
 ACCOUNT_FORMS = {
     'signup': 'news.forms.CustomSignupForm',
 }
@@ -310,7 +305,7 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 CACHES = {
     'default': {
-        'TIMEOUT': 60,
+        'TIMEOUT': 10,
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
         'LOCATION': os.path.join(BASE_DIR, 'cache_files'),
     }
