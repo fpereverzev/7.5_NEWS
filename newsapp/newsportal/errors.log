@@ -301,3 +301,469 @@ Traceback (most recent call last):
     raise NoReverseMatch("%s is not a registered namespace" % key)
 django.urls.exceptions.NoReverseMatch: 'account' is not a registered namespace
 2024-09-01 07:14:10,278 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 137463
+2024-09-03 06:34:24,611 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /accounts/signup/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/decorators.py", line 12, in wrap
+    resp = function(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/views.py", line 142, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/mixins.py", line 40, in dispatch
+    response = super().dispatch(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/mixins.py", line 105, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/mixins.py", line 59, in get
+    response = super().get(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/generic/edit.py", line 142, in get
+    return self.render_to_response(self.get_context_data())
+                                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/views.py", line 163, in get_context_data
+    ret = super().get_context_data(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/mixins.py", line 122, in get_context_data
+    ret = super().get_context_data(**kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/generic/edit.py", line 72, in get_context_data
+    kwargs["form"] = self.get_form()
+                     ^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/mixins.py", line 79, in get_form
+    form = super().get_form(form_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/generic/edit.py", line 36, in get_form
+    form_class = self.get_form_class()
+                 ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/views.py", line 145, in get_form_class
+    return get_form_class(app_settings.FORMS, "signup", self.form_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/utils.py", line 304, in get_form_class
+    form_class = import_attribute(form_class)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/utils.py", line 145, in import_attribute
+    ret = getattr(importlib.import_module(pkg), attr)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: module 'news.forms' has no attribute 'CustomSignupForm'
+2024-09-03 06:34:24,614 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /accounts/signup/ HTTP/1.1" 500 157333
+2024-09-03 06:41:01,734 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /accounts/signup/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/decorators.py", line 12, in wrap
+    resp = function(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/decorators/debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/decorators/cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/views.py", line 142, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/mixins.py", line 40, in dispatch
+    response = super().dispatch(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/mixins.py", line 105, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/generic/base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/mixins.py", line 69, in post
+    response = self.form_valid(form)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/views.py", line 153, in form_valid
+    return complete_signup(
+           ^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/utils.py", line 192, in complete_signup
+    return perform_login(
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/utils.py", line 159, in perform_login
+    return flows.login.perform_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/internal/flows/login.py", line 39, in perform_login
+    return resume_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/internal/flows/login.py", line 48, in resume_login
+    response = ctrl.handle()
+               ^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/stages.py", line 86, in handle
+    response, cont = stage.handle()
+                     ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/stages.py", line 121, in handle
+    send_email_confirmation(
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/utils.py", line 353, in send_email_confirmation
+    email_address.send_confirmation(request, signup=signup)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/models.py", line 101, in send_confirmation
+    confirmation.send(request, signup=signup)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/models.py", line 134, in send
+    get_adapter().send_confirmation_mail(request, self, signup)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/adapter.py", line 625, in send_confirmation_mail
+    self.send_mail(email_template, emailconfirmation.email_address.email, ctx)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/allauth/account/adapter.py", line 207, in send_mail
+    msg.send()
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/mail/message.py", line 300, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/mail/backends/smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/mail/backends/smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/smtplib.py", line 1050, in __init__
+    SMTP.__init__(self, host, port, local_hostname, timeout,
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/smtplib.py", line 1056, in _get_socket
+    new_socket = super()._get_socket(host, port, timeout)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 851, in create_connection
+    raise exceptions[0]
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/socket.py", line 836, in create_connection
+    sock.connect(sa)
+ConnectionRefusedError: [Errno 61] Connection refused
+2024-09-03 06:41:01,737 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "POST /accounts/signup/ HTTP/1.1" 500 224369
+2024-09-03 06:57:08,401 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/create/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'articles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 32, in create_article
+    return redirect('articles:list')  # Замените на правильный путь
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'articles' is not a registered namespace
+2024-09-03 06:57:08,428 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "POST /articles/create/ HTTP/1.1" 500 145
+2024-09-03 06:57:18,177 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/create/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/urls/base.py", line 71, in reverse
+    extra, resolver = resolver.namespace_dict[ns]
+                      ~~~~~~~~~~~~~~~~~~~~~~~^^^^
+KeyError: 'articles'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 32, in create_article
+    return redirect('articles:list')  # Замените на правильный путь
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 49, in redirect
+    return redirect_class(resolve_url(to, *args, **kwargs))
+                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 180, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/urls/base.py", line 82, in reverse
+    raise NoReverseMatch("%s is not a registered namespace" % key)
+django.urls.exceptions.NoReverseMatch: 'articles' is not a registered namespace
+2024-09-03 06:57:18,196 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "POST /articles/create/ HTTP/1.1" 500 145
+2024-09-03 07:48:07,488 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/1/delete/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 124, in delete_article
+    if request.user == article.author or request.user.is_superuser:
+                       ^^^^^^^^^^^^^^
+AttributeError: 'Article' object has no attribute 'author'
+2024-09-03 07:48:07,490 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /articles/1/delete/ HTTP/1.1" 500 74724
+2024-09-03 07:48:54,717 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/2/delete/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 124, in delete_article
+    if request.user == article.author or request.user.is_superuser:
+                       ^^^^^^^^^^^^^^
+AttributeError: 'Article' object has no attribute 'author'
+2024-09-03 07:48:54,718 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /articles/2/delete/ HTTP/1.1" 500 74724
+2024-09-03 08:04:41,611 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/1/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: news_article.is_deleted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 92, in article_detail
+    article = get_object_or_404(Article, id=article_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 86, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: news_article.is_deleted
+2024-09-03 08:04:41,615 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /articles/1/ HTTP/1.1" 500 150338
+2024-09-03 08:04:43,727 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/2/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: news_article.is_deleted
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 188, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/decorators.py", line 186, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 92, in article_detail
+    article = get_object_or_404(Article, id=article_id)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 86, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 645, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 382, in __len__
+    self._fetch_all()
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 1928, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 329, in execute
+    return super().execute(query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: news_article.is_deleted
+2024-09-03 08:04:43,729 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /articles/2/ HTTP/1.1" 500 150338
+2024-09-03 08:12:06,314 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/1/delete/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 133, in delete_article
+    if request.user == article.author or request.user.is_superuser:
+                       ^^^^^^^^^^^^^^
+AttributeError: 'Article' object has no attribute 'author'
+2024-09-03 08:12:06,316 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /articles/1/delete/ HTTP/1.1" 500 74877
+2024-09-03 08:12:14,127 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/1/update/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 147, in update_article
+    if request.user != article.author and not request.user.is_superuser:
+                       ^^^^^^^^^^^^^^
+AttributeError: 'Article' object has no attribute 'author'
+2024-09-03 08:12:14,128 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /articles/1/update/ HTTP/1.1" 500 74843
+2024-09-03 08:12:22,869 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/1/update/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 147, in update_article
+    if request.user != article.author and not request.user.is_superuser:
+                       ^^^^^^^^^^^^^^
+AttributeError: 'Article' object has no attribute 'author'
+2024-09-03 08:12:22,870 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /articles/1/update/ HTTP/1.1" 500 74843
+2024-09-03 08:12:25,267 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /articles/1/update/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/contrib/auth/decorators.py", line 23, in _wrapper_view
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 147, in update_article
+    if request.user != article.author and not request.user.is_superuser:
+                       ^^^^^^^^^^^^^^
+AttributeError: 'Article' object has no attribute 'author'
+2024-09-03 08:12:25,269 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /articles/1/update/ HTTP/1.1" 500 74843

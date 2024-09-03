@@ -6,17 +6,23 @@
     <title>{{ article.title }}</title>
 </head>
 <body>
-    <header>
-        <h1>{{ article.title }}</h1>
-    </header>
-    <main>
-        <article>
-            <p>{{ article.content }}</p>
-            <p><strong>Дата публикации:</strong> {{ article.published_date }}</p>
-        </article>
-    </main>
-    <footer>
-        <a href="{% url 'news:home' %}">На главную</a>
-    </footer>
+<header>
+    <h1>{{ article.title }}</h1>
+</header>
+<main>
+    <article>
+        <p>{{ article.content }}</p>
+        <p><strong>Дата публикации:</strong> {{ article.published_date }}</p>
+    </article>
+
+
+    <div>
+        <a href="{% url 'news:update_article' article.id %}">Редактировать</a>
+        <a href="{% url 'news:delete_article' article.id %}">Удалить</a>
+    </div>
+</main>
+<footer>
+    <a href="{% url 'news:home' %}">На главную</a>
+</footer>
 </body>
 </html>

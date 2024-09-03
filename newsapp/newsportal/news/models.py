@@ -19,18 +19,22 @@ class Article(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     published_date = models.DateTimeField(auto_now_add=True)
-    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)  # Сделать опциональным
+    category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
+    is_deleted = models.BooleanField(default=False)  # Новое поле
+
+    def __str__(self):
+        return self.title
 
     def __str__(self):
         return self.title
 
     def save(self, *args, **kwargs):
         super().save(*args, **kwargs)
-        cache.set(f'article_{self.id}', self, timeout=None)  # Кэшируем статью без таймаута
+        cache.set(f'article_{self.id}', self, timeout=None)
 
     def delete(self, *args, **kwargs):
-        cache.delete(f'article_{self.id}')
-        super().delete(*args, **kwargs)
+        self.is_deleted = True
+        self.save()
 
 
 @receiver(post_save, sender=Article)

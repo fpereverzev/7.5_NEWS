@@ -1,0 +1,9 @@
+2024-09-03 06:50:55,002 INFO autoreload Watching for file changes with StatReloader
+2024-09-03 07:05:38,092 INFO autoreload Watching for file changes with StatReloader
+2024-09-03 07:06:13,202 INFO autoreload Watching for file changes with StatReloader
+2024-09-03 07:11:09,265 INFO autoreload /Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py changed, reloading.
+2024-09-03 07:11:09,730 INFO autoreload Watching for file changes with StatReloader
+2024-09-03 07:18:30,805 INFO autoreload Watching for file changes with StatReloader
+2024-09-03 07:34:25,078 INFO autoreload Watching for file changes with StatReloader
+2024-09-03 07:38:07,527 INFO autoreload Watching for file changes with StatReloader
+2024-09-03 07:40:36,171 INFO autoreload /Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/settings.py changed, reloading.
