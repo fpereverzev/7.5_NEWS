@@ -7,7 +7,7 @@ from django.core.cache import cache
 from .tasks import send_notification
 
 
-# Модель для создания статьи
+# Модель для категорий
 class Category(models.Model):
     name = models.CharField(max_length=255, unique=True)
 
@@ -15,15 +15,14 @@ class Category(models.Model):
         return self.name
 
 
+# Модель для статей
 class Article(models.Model):
     title = models.CharField(max_length=200)
     content = models.TextField()
     published_date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
-    is_deleted = models.BooleanField(default=False)  # Новое поле
-
-    def __str__(self):
-        return self.title
+    is_deleted = models.BooleanField(default=False)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=2)  # Добавляем поле автор
 
     def __str__(self):
         return self.title
@@ -63,12 +62,9 @@ class Author(models.Model):
         self.save()
 
 
-# Модель для категорий
-
 # Модель для постов
 class Post(models.Model):
     author = models.ForeignKey(Author, on_delete=models.CASCADE)
-
     NEWS = 'NW'
     ARTICLE = 'AR'
     CATEGORY_CHOICES = (

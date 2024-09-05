@@ -15,4 +15,5 @@ urlpatterns = [
     path('register/', views.RegisterView.as_view(), name='register'),
     path('articles/<int:article_id>/delete/', views.delete_article, name='delete_article'),
     path('articles/<int:article_id>/update/', views.update_article, name='update_article'),
+    path('post-category/<int:post_category_id>/', views.post_category_articles, name='post_category_articles'),
 ]

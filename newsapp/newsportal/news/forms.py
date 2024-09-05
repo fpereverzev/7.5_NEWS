@@ -16,9 +16,14 @@ class ArticleForm(forms.ModelForm):
 
 
 class PostForm(forms.ModelForm):
+    categories = forms.ModelMultipleChoiceField(
+        queryset=Category.objects.all(),
+        widget=forms.CheckboxSelectMultiple
+    )
+
     class Meta:
         model = Post
-        fields = ['author', 'categoryType', 'title', 'text']
+        fields = ['title', 'text', 'categories']
 
 
 class CustomSignupForm(SignupForm):

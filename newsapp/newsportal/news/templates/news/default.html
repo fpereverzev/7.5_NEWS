@@ -16,7 +16,7 @@
             <a href="{% url 'news:create_article' %}" class="btn">Создать статью</a>
             <a href="{% url 'news:create_post' %}" class="btn">Создать пост</a>
             <a href="{% url 'news:subscriptions' %}" class="btn">Управление подписками</a>
-            <a href="{% url 'account_signup' %}" class="btn">Регистрация</a> <!-- Измените URL на прямой путь -->
+            <a href="{% url 'account_signup' %}" class="btn">Регистрация</a>
             <a href="{% url 'account_login' %}" class="btn">Вход</a>
             <a href="{% url 'account_logout' %}" class="btn">Выход</a>
         </nav>
@@ -25,10 +25,18 @@
 <main>
     <div class="container">
         <section>
-            <h2>Категории</h2>
+            <h2>Категории новостей</h2>
             <ul class="category-list">
                 {% for category in categories %}
                 <li><a href="{% url 'news:category_articles' category.id %}">{{ category.name }}</a></li>
+                {% endfor %}
+            </ul>
+        </section>
+        <section>
+            <h2>Категории постов</h2>
+            <ul class="category-list">
+                {% for post_category in post_categories %}
+                <li><a href="{% url 'news:post_category_articles' post_category.id %}">{{ post_category.name }}</a></li>
                 {% endfor %}
             </ul>
         </section>

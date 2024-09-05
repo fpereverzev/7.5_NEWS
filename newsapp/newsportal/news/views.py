@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ArticleForm, PostForm
 from django.contrib.auth.decorators import login_required
-from .models import Category, Subscriber, Post, Article
+from .models import Category, Subscriber, Post, Article, Author, PostCategory  # Добавьте PostCategory сюда
 from django.contrib import messages
 from django.views.decorators.cache import cache_page
 from django.core.cache import cache
@@ -12,14 +12,14 @@ from django.contrib.auth.forms import UserCreationForm
 from django.views import View
 
 
-# Общее кэширование списка категорий
 @cache_page(5)
 def home(request):
-    categories = cache.get('home_categories')
-    if not categories:
-        categories = Category.objects.all()
-        cache.set('home_categories', categories, timeout=60)
-    return render(request, 'default.html', {'categories': categories})
+    categories = Category.objects.all()
+    post_categories = PostCategory.objects.all()  # Получаем категории постов
+    return render(request, 'news/default.html', {
+        'categories': categories,
+        'post_categories': post_categories,  # Передаем категории постов в шаблон
+    })
 
 
 @login_required
@@ -31,7 +31,7 @@ def create_article(request):
             article.author = request.user  # Присваиваем автора статьи
             article.save()
             messages.success(request, "Статья успешно создана.")
-            return redirect('news:article_list')  # Заменено на правильный путь
+            return redirect('news:article_list')
         else:
             messages.error(request, "Ошибка при создании статьи.")
     else:
@@ -46,17 +46,17 @@ def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
-            post = form.save()
+            post = form.save(commit=False)
+            post.author = request.user  # Присваиваем автору текущего пользователя
+            post.save()
             messages.success(request, "Пост успешно создан.")
-            cache.set(f'post_{post.id}', post, timeout=None)
             return redirect('news:post_list')
         else:
             messages.error(request, "Ошибка при создании поста.")
     else:
         form = PostForm()
 
-    categories = Category.objects.all()
-    return render(request, 'news/create_post.html', {'form': form, 'categories': categories})
+    return render(request, 'news/create_post.html', {'form': form})
 
 
 @login_required
@@ -76,7 +76,7 @@ def manage_subscription(request):
                   {'categories': categories, 'user_subscriptions': user_subscriptions})
 
 
-@cache_page(10)
+@cache_page(5)
 def news_detail(request, news_id):
     post = cache.get(f'post_{news_id}')
     if not post:
@@ -85,23 +85,14 @@ def news_detail(request, news_id):
     return render(request, 'news/news_detail.html', {'post': post})
 
 
-@cache_page(5 * 60)  # Кэшировать на 5 минут
+@cache_page(5)
 def article_detail(request, article_id):
-    # Попробуем получить статью из кэша
     article = cache.get(f'article_{article_id}')
-
     if not article:
-        # Если статьи нет в кэше, загружаем её из базы данных
         article = get_object_or_404(Article, id=article_id)
-
-        # Проверяем, не помечена ли статья как удаленная
         if article.is_deleted:
             raise Http404("Article does not exist")
-
-        # Кэшируем статью на 5 минут
         cache.set(f'article_{article_id}', article, timeout=5 * 60)
-
-    # Отдаем шаблон с статьей
     return render(request, 'news/article_detail.html', {'article': article})
 
 
@@ -109,6 +100,15 @@ def category_articles(request, category_id):
     category = get_object_or_404(Category, id=category_id)
     articles = Article.objects.filter(category=category, is_deleted=False)
     return render(request, 'news/category_articles.html', {'category': category, 'articles': articles})
+
+
+def post_category_articles(request, post_category_id):
+    post_category = get_object_or_404(PostCategory, id=post_category_id)
+    posts = Post.objects.filter(category=post_category).order_by('-dateCreation')
+    return render(request, 'news/post_category_articles.html', {
+        'post_category': post_category,
+        'posts': posts
+    })
 
 
 def post_list(request):
@@ -131,19 +131,18 @@ def article_list(request):
 def delete_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
     if request.user == article.author or request.user.is_superuser:
-        article.delete()
+        article.is_deleted = True
+        article.save()  # Сохраняем изменения
         messages.success(request, "Статья успешно удалена.")
         return redirect('news:article_list')
     else:
         messages.error(request, "У вас нет прав на удаление этой статьи.")
-        return redirect('news:article_detail', article_id=article_id)
+        return redirect('news:article_detail', article_id=article.id)
 
 
 @login_required
 def update_article(request, article_id):
     article = get_object_or_404(Article, id=article_id)
-
-    # Проверка, является ли пользователь автором статьи или администратором
     if request.user != article.author and not request.user.is_superuser:
         messages.error(request, "У вас нет прав на редактирование этой статьи.")
         return redirect('news:article_detail', article_id=article.id)
@@ -162,7 +161,6 @@ def update_article(request, article_id):
     return render(request, 'news/update_article.html', {'form': form, 'article': article})
 
 
-# Представление для регистрации пользователя
 class RegisterView(View):
     def get(self, request):
         form = UserCreationForm()
