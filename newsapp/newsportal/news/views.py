@@ -10,15 +10,22 @@ from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.views import View
+from django.http import Http404
 
 
-@cache_page(5)
 def home(request):
     categories = Category.objects.all()
     post_categories = PostCategory.objects.all()  # Получаем категории постов
+
+    # Получаем все посты и группируем их по категориям
+    posts_by_category = {}
+    for category in post_categories:
+        posts_by_category[category] = Post.objects.filter(categories=category)
+
     return render(request, 'news/default.html', {
         'categories': categories,
         'post_categories': post_categories,  # Передаем категории постов в шаблон
+        'posts_by_category': posts_by_category,  # Передаем посты по категориям в шаблон
     })
 
 
@@ -46,8 +53,10 @@ def create_post(request):
     if request.method == 'POST':
         form = PostForm(request.POST)
         if form.is_valid():
+            # Проверяем, есть ли автор для текущего пользователя
+            author, created = Author.objects.get_or_create(authorUser=request.user)
             post = form.save(commit=False)
-            post.author = request.user  # Присваиваем автору текущего пользователя
+            post.author = author
             post.save()
             messages.success(request, "Пост успешно создан.")
             return redirect('news:post_list')
@@ -76,16 +85,14 @@ def manage_subscription(request):
                   {'categories': categories, 'user_subscriptions': user_subscriptions})
 
 
-@cache_page(5)
-def news_detail(request, news_id):
-    post = cache.get(f'post_{news_id}')
+def news_detail(request, post_id):
+    post = cache.get(f'post_{post_id}')
     if not post:
-        post = get_object_or_404(Post, id=news_id)
-        cache.set(f'post_{news_id}', post, timeout=300)
+        post = get_object_or_404(Post, id=post_id)
+        cache.set(f'post_{post_id}', post, timeout=300)
     return render(request, 'news/news_detail.html', {'post': post})
 
 
-@cache_page(5)
 def article_detail(request, article_id):
     article = cache.get(f'article_{article_id}')
     if not article:
@@ -104,7 +111,7 @@ def category_articles(request, category_id):
 
 def post_category_articles(request, post_category_id):
     post_category = get_object_or_404(PostCategory, id=post_category_id)
-    posts = Post.objects.filter(category=post_category).order_by('-dateCreation')
+    posts = Post.objects.filter(categories=post_category).order_by('-dateCreation')
     return render(request, 'news/post_category_articles.html', {
         'post_category': post_category,
         'posts': posts
@@ -159,6 +166,54 @@ def update_article(request, article_id):
         form = ArticleForm(instance=article)
 
     return render(request, 'news/update_article.html', {'form': form, 'article': article})
+
+
+@login_required
+def update_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user != post.author.authorUser and not request.user.is_superuser:
+        messages.error(request, "У вас нет прав на редактирование этого поста.")
+        return redirect('news:news_detail', post_id=post.id)
+
+    if request.method == 'POST':
+        form = PostForm(request.POST, instance=post)
+        if form.is_valid():
+            form.save()
+            messages.success(request, "Пост успешно обновлен.")
+            return redirect('news:news_detail', post_id=post.id)
+        else:
+            messages.error(request, "Ошибка при обновлении поста.")
+    else:
+        form = PostForm(instance=post)
+
+    return render(request, 'news/update_post.html', {'form': form, 'post': post})
+
+
+@login_required
+def delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user == post.author.authorUser or request.user.is_superuser:
+        post.delete()
+        messages.success(request, "Пост успешно удален.")
+        return redirect('news:post_list')
+    else:
+        messages.error(request, "У вас нет прав на удаление этого поста.")
+        return redirect('news:news_detail', post_id=post.id)
+
+
+@login_required
+def confirm_delete_post(request, post_id):
+    post = get_object_or_404(Post, id=post_id)
+    if request.user != post.author.authorUser and not request.user.is_superuser:
+        messages.error(request, "У вас нет прав на удаление этого поста.")
+        return redirect('news:news_detail', post_id=post.id)
+
+    if request.method == 'POST':
+        post.delete()
+        messages.success(request, "Пост успешно удален.")
+        return redirect('news:post_list')
+
+    return render(request, 'news/confirm_delete_post.html', {'post': post})
 
 
 class RegisterView(View):

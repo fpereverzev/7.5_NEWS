@@ -40,6 +40,19 @@
                 {% endfor %}
             </ul>
         </section>
+        <section>
+            <h2>Посты по категориям</h2>
+            {% for category, posts in posts_by_category.items %}
+                <h3>{{ category.name }}</h3>
+                <ul>
+                    {% for post in posts %}
+                        <li><a href="{% url 'news:news_detail' post.id %}">{{ post.title }}</a></li>
+                    {% empty %}
+                        <p>Постов нет.</p>
+                    {% endfor %}
+                </ul>
+            {% endfor %}
+        </section>
     </div>
 </main>
 <footer>

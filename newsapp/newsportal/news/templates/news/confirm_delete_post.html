@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подтверждение удаления поста</title>
+</head>
+<body>
+    <header>
+        <h1>Подтверждение удаления поста</h1>
+    </header>
+    <main>
+        <p>Вы действительно хотите удалить пост "<strong>{{ post.title }}</strong>"?</p>
+        <form method="POST">
+            {% csrf_token %}
+            <button type="submit">Удалить</button>
+            <a href="{% url 'news:news_detail' post.id %}">Отменить</a>
+        </form>
+    </main>
+</body>
+</html>

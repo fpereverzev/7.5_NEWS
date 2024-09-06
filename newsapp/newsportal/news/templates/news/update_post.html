@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Редактирование поста</title>
+</head>
+<body>
+<header>
+    <h1>Редактирование поста</h1>
+</header>
+<main>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Обновить пост</button>
+    </form>
+    <a href="{% url 'news:news_detail' post.id %}">Назад</a>
+</main>
+</body>
+</html>
