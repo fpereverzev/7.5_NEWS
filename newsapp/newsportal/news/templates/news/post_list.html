@@ -4,6 +4,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Все посты</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            padding: 1em;
+            text-align: center;
+        }
+        main {
+            padding: 1em;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background: #fff;
+            margin-bottom: 1em;
+            padding: 1em;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+        }
+        button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.5em 1em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #c0392b;
+        }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 1em;
+        }
+        .pagination a {
+            margin: 0 0.5em;
+            text-decoration: none;
+            color: #3498db;
+        }
+        .pagination a:hover {
+            text-decoration: underline;
+        }
+        .pagination span {
+            margin: 0 0.5em;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -11,7 +70,7 @@
     </header>
     <main>
         <ul>
-            {% for post in page_obj %}
+            {% for post in page_obj.object_list %}
                 <li>
                     <a href="{% url 'news:news_detail' post.id %}">{{ post.title }}</a>
                     <p>{{ post.preview }}</p>
@@ -26,21 +85,17 @@
                 <p>Постов нет.</p>
             {% endfor %}
         </ul>
-        <div>
+        <div class="pagination">
             <span>Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}</span>
             <div>
-                <span>
-                    {% if page_obj.has_previous %}
-                        <a href="?page=1">Первая</a>
-                        <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
-                    {% endif %}
-                </span>
-                <span>
-                    {% if page_obj.has_next %}
-                        <a href="?page={{ page_obj.next_page_number }}">Вперед</a>
-                        <a href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
-                    {% endif %}
-                </span>
+                {% if page_obj.has_previous %}
+                    <a href="?page=1">Первая</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">Назад</a>
+                {% endif %}
+                {% if page_obj.has_next %}
+                    <a href="?page={{ page_obj.next_page_number }}">Вперед</a>
+                    <a href="?page={{ page_obj.paginator.num_pages }}">Последняя</a>
+                {% endif %}
             </div>
         </div>
     </main>
