@@ -10,6 +10,7 @@ from django.views import View
 from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
+from django.utils.translation import gettext as _
 
 
 def home(request):
@@ -23,6 +24,11 @@ def home(request):
         'posts_by_category': posts_by_category,
         'user': request.user,
     })
+
+
+def example_view(request):
+    message = _("Добро пожаловать на наш сайт!")
+    return render(request, 'example.html', {'message': message})
 
 
 @login_required
