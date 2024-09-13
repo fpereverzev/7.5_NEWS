@@ -11,6 +11,8 @@ from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.utils.translation import gettext as _
+from django.shortcuts import render
+from django.utils.translation import get_language_from_request
 
 
 def home(request):
@@ -23,6 +25,7 @@ def home(request):
         'categories': categories,
         'posts_by_category': posts_by_category,
         'user': request.user,
+        'redirect_to': request.path,  # Передаем текущий URL для редиректа
     })
 
 

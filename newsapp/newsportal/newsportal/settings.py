@@ -117,8 +117,8 @@ from django.utils.translation import gettext_lazy as _
 LANGUAGE_CODE = 'en-us'
 
 LANGUAGES = [
-    ('en', _('English')),
     ('ru', _('Russian')),
+    ('en', _('English')),
 ]
 
 TIME_ZONE = 'UTC'

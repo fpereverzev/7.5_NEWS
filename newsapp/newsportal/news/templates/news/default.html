@@ -3,34 +3,48 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% load i18n %} {% trans "Новостной портал" %}</title>
+    <title>{% load i18n %} {% trans "News Portal" %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
 <header>
     <div class="container">
-        <h1>{% trans "Новостной портал" %}</h1>
+        <h1>{% trans "News Portal" %}</h1>
         <nav>
-            <a href="{% url 'news:home' %}" class="btn">{% trans "Главная" %}</a>
-            <a href="{% url 'news:create_article' %}" class="btn">{% trans "Создать статью" %}</a>
-            <a href="{% url 'news:create_post' %}" class="btn">{% trans "Создать пост" %}</a>
-            <a href="{% url 'news:subscriptions' %}" class="btn">{% trans "Управление подписками" %}</a>
+            <a href="{% url 'news:home' %}" class="btn">{% trans "Home" %}</a>
+            <a href="{% url 'news:create_article' %}" class="btn">{% trans "Create Article" %}</a>
+            <a href="{% url 'news:create_post' %}" class="btn">{% trans "Create Post" %}</a>
+            <a href="{% url 'news:subscriptions' %}" class="btn">{% trans "Manage Subscriptions" %}</a>
             {% if user.is_authenticated %}
-            <a href="{% url 'account_logout' %}" class="btn">{% trans "Выход" %}</a>
+            <a href="{% url 'account_logout' %}" class="btn">{% trans "Logout" %}</a>
             {% else %}
-            <a href="{% url 'account_signup' %}" class="btn">{% trans "Регистрация" %}</a>
-            <a href="{% url 'account_login' %}" class="btn">{% trans "Вход" %}</a>
+            <a href="{% url 'account_signup' %}" class="btn">{% trans "Sign Up" %}</a>
+            <a href="{% url 'account_login' %}" class="btn">{% trans "Login" %}</a>
             {% endif %}
         </nav>
         <div class="language-switcher">
-            <form action="{% url 'set_language' %}" method="post">
+            <form action="{% url 'set_language' %}" method="POST">
                 {% csrf_token %}
-                <select name="language" onchange="this.form.submit()">
-                    <option value="en" {% if LANGUAGE_CODE == 'en' %}selected{% endif %}>English</option>
-                    <option value="ru" {% if LANGUAGE_CODE == 'ru' %}selected{% endif %}>Русский</option>
+                <input type="hidden" name="next" value="{{ redirect_to|default:'' }}">
+
+                <label for="language">
+                    <span style="color: #adb5bd;">{% trans 'Language' %}:</span>
+                </label>
+
+                <select name="language" id="language" onchange="this.form.submit();">
+                    <option value="none" hidden="">{% trans 'English' %}</option>
+
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+
+                    {% for language in languages %}
+                    <option value="{{ language.code }}"
+                            {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                        {{ language.name_local }}
+                    </option>
+                    {% endfor %}
                 </select>
-                <button type="submit">{% trans "Переключить язык" %}</button>
             </form>
         </div>
     </div>
@@ -38,7 +52,7 @@
 <main>
     <div class="container">
         <section>
-            <h2>{% trans "Категории новостей" %}</h2>
+            <h2>{% trans "News Categories" %}</h2>
             <ul class="category-list">
                 {% for category in categories %}
                 <li><a href="{% url 'news:category_articles' category.id %}">{{ category.name }}</a></li>
@@ -46,14 +60,14 @@
             </ul>
         </section>
         <section>
-            <h2>{% trans "Посты по категориям" %}</h2>
+            <h2>{% trans "Posts by Category" %}</h2>
             {% for category, posts in posts_by_category.items %}
             <h3>{{ category.name }}</h3>
             <ul>
                 {% for post in posts %}
                 <li><a href="{% url 'news:news_detail' post.id %}">{{ post.title }}</a></li>
                 {% empty %}
-                <p>{% trans "Постов нет." %}</p>
+                <p>{% trans "No posts." %}</p>
                 {% endfor %}
             </ul>
             {% endfor %}
@@ -62,7 +76,7 @@
 </main>
 <footer>
     <div class="container">
-        <p>&copy; 2024 {% trans "Новостной портал" %}</p>
+        <p>&copy; 2024 {% trans "News Portal" %}</p>
     </div>
 </footer>
 </body>

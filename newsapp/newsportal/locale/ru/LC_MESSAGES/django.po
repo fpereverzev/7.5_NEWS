@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-10 17:49+0300\n"
+"POT-Creation-Date: 2024-09-13 07:48+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,63 +19,169 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
 "n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
 "(n%100>=11 && n%100<=14)? 2 : 3);\n"
+
 #: news/templates/news/default.html:6 news/templates/news/default.html:13
-#: news/templates/news/default.html:68
-msgid "Новостной портал"
+#: news/templates/news/default.html:79
+msgid "News Portal"
 msgstr ""
 
 #: news/templates/news/default.html:15
-msgid "Главная"
-msgstr "Main"
+msgid "Home"
+msgstr ""
 
 #: news/templates/news/default.html:16
-msgid "Создать статью"
-msgstr "Create an article"
+msgid "Create Article"
+msgstr ""
 
 #: news/templates/news/default.html:17
-msgid "Создать пост"
-msgstr "Create a post"
+msgid "Create Post"
+msgstr ""
 
 #: news/templates/news/default.html:18
-msgid "Управление подписками"
-msgstr "Manage subscriptions"
+msgid "Manage Subscriptions"
+msgstr ""
 
 #: news/templates/news/default.html:20
-msgid "Выход"
-msgstr "Exit"
+msgid "Logout"
+msgstr ""
 
 #: news/templates/news/default.html:22
-msgid "Регистрация"
-msgstr "Sign up"
+msgid "Sign Up"
+msgstr ""
 
 #: news/templates/news/default.html:23
-msgid "Вход"
-msgstr "Sign in"
+msgid "Login"
+msgstr ""
 
-#: news/templates/news/default.html:35
-msgid "Переключить язык"
-msgstr "Change language"
+#: news/templates/news/default.html:32
+msgid "Language"
+msgstr ""
 
-#: news/templates/news/default.html:44
-msgid "Категории новостей"
-msgstr "News categories"
+#: news/templates/news/default.html:36 newsportal/settings.py:121
+msgid "English"
+msgstr ""
 
-#: news/templates/news/default.html:52
-msgid "Посты по категориям"
-msgstr "Posts by category"
+#: news/templates/news/default.html:55
+msgid "News Categories"
+msgstr ""
 
-#: news/templates/news/default.html:59
-msgid "Постов нет."
-msgstr "Zero posts"
+#: news/templates/news/default.html:63
+msgid "Posts by Category"
+msgstr ""
 
-#: news/views.py:30
-msgid "Добро пожаловать на наш сайт!"
-msgstr "Welcome to our site!"
+#: news/templates/news/default.html:70
+msgid "No posts."
+msgstr ""
+
+#: news/views.py:31
+msgid "Article successfully created."
+msgstr ""
+
+#: news/views.py:34
+msgid "Error while creating the article."
+msgstr ""
+
+#: news/views.py:57
+msgid "Post successfully created."
+msgstr ""
+
+#: news/views.py:60
+msgid "Error while creating the post."
+msgstr ""
+
+#: news/views.py:71
+msgid "You do not have permission to edit this post."
+msgstr ""
+
+#: news/views.py:85
+msgid "Post successfully updated."
+msgstr ""
+
+#: news/views.py:88
+msgid "Error while updating the post."
+msgstr ""
+
+#: news/views.py:100
+msgid "Post successfully deleted."
+msgstr ""
+
+#: news/views.py:103
+msgid "You do not have permission to delete this post."
+msgstr ""
+
+#: news/views.py:116
+msgid "Subscriptions successfully updated."
+msgstr ""
+
+#: news/views.py:132
+msgid "Article does not exist"
+msgstr ""
+
+#: news/views.py:173
+msgid "Article successfully deleted."
+msgstr ""
+
+#: news/views.py:176
+msgid "You do not have permission to delete this article."
+msgstr ""
+
+#: news/views.py:184
+msgid "You do not have permission to edit this article."
+msgstr ""
+
+#: news/views.py:191
+msgid "Article successfully updated."
+msgstr ""
+
+#: news/views.py:194
+msgid "Error while updating the article."
+msgstr ""
 
 #: newsportal/settings.py:120
-msgid "English"
-msgstr "Английский"
-
-#: newsportal/settings.py:121
 msgid "Russian"
-msgstr "Русский"
+msgstr ""
+
+#~ msgid "Новостной портал"
+#~ msgstr "News Portal"
+
+#~ msgid "Главная"
+#~ msgstr "Home"
+
+#~ msgid "Создать статью"
+#~ msgstr "Create Article"
+
+#~ msgid "Создать пост"
+#~ msgstr "Create Post"
+
+#~ msgid "Управление подписками"
+#~ msgstr "Manage Subscriptions"
+
+#~ msgid "Выход"
+#~ msgstr "Logout"
+
+#~ msgid "Регистрация"
+#~ msgstr "Sign Up"
+
+#~ msgid "Вход"
+#~ msgstr "Login"
+
+#~ msgid "Язык"
+#~ msgstr "Language"
+
+#~ msgid "Английский"
+#~ msgstr "English"
+
+#~ msgid "Категории новостей"
+#~ msgstr "News Categories"
+
+#~ msgid "Посты по категориям"
+#~ msgstr "Posts by category"
+
+#~ msgid "Нет постов"
+#~ msgstr "No posts."
+
+#~ msgid "Добро пожаловать на наш новостной портал!"
+#~ msgstr "Welcome to our news portal!"
+
+#~ msgid "Русский"
+#~ msgstr "Russian"
