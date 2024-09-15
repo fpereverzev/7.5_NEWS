@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.yandex',
+    'modeltranslation',
     # 'django_celery_beat',
 ]
 
@@ -117,9 +118,12 @@ from django.utils.translation import gettext_lazy as _
 LANGUAGE_CODE = 'en-us'
 
 LANGUAGES = [
-    ('ru', _('Russian')),
     ('en', _('English')),
+    ('ru', _('Russian')),
+
 ]
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'ru'
 
 TIME_ZONE = 'UTC'
 

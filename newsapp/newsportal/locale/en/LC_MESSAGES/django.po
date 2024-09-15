@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-14 19:23+0000\n"
+"POT-Creation-Date: 2024-09-15 06:57+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,66 +16,64 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || "
-"(n%100>=11 && n%100<=14)? 2 : 3);\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
 #: news/templates/news/default.html:6 news/templates/news/default.html:13
 #: news/templates/news/default.html:79
 msgid "News Portal"
-msgstr ""
+msgstr "News Portal"
 
 #: news/templates/news/default.html:15
 msgid "Home"
-msgstr "Домашняя страница"
+msgstr "Home"
 
 #: news/templates/news/default.html:16
 msgid "Create Article"
-msgstr "Создать статью"
+msgstr "Create Article"
 
 #: news/templates/news/default.html:17
 msgid "Create Post"
-msgstr "Создать пост"
+msgstr "Create Post"
 
 #: news/templates/news/default.html:18
 msgid "Manage Subscriptions"
-msgstr "Управление подписками"
+msgstr "Manage Subscriptions"
 
 #: news/templates/news/default.html:20
 msgid "Logout"
-msgstr "Выход"
+msgstr "Logout"
 
 #: news/templates/news/default.html:22
 msgid "Sign Up"
-msgstr "Регистрация"
+msgstr "Sign Up"
 
 #: news/templates/news/default.html:23
 msgid "Login"
-msgstr "Вход"
+msgstr "Login"
 
 #: news/templates/news/default.html:32
 msgid "Language"
-msgstr "Язык"
+msgstr "Language"
 
 #: news/templates/news/default.html:36 newsportal/settings.py:121
 msgid "English"
-msgstr "Русский"
+msgstr "English"
 
 #: news/templates/news/default.html:55
 msgid "News Categories"
-msgstr "Категории новостей"
+msgstr "News Categories"
 
 #: news/templates/news/default.html:63
 msgid "Posts by Category"
-msgstr "Посты по категориям"
+msgstr "Posts by Category"
 
 #: news/templates/news/default.html:70
 msgid "No posts."
-msgstr "Нет постов"
+msgstr "No posts."
 
 #: news/views.py:33
 msgid "Добро пожаловать на наш сайт!"
-msgstr ""
+msgstr "Welcome to our site!"
 
-#: newsportal/settings.py:120
+#: newsportal/settings.py:122
 msgid "Russian"
-msgstr ""
+msgstr "Russian"
