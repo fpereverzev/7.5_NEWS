@@ -1,10 +1,20 @@
-# from modeltranslation.translator import register, TranslationOptions
-# from .models import Article, Category
-#
-# @register(Article)
-# class ArticleTranslationOptions(TranslationOptions):
-#     fields = ('title', 'content')
-#
-# @register(Category)
-# class CategoryTranslationOptions(TranslationOptions):
-#     fields = ('name',)
+from .models import Category, Post, Article
+from modeltranslation.translator import register, \
+    TranslationOptions  # импортируем декоратор для перевода и класс настроек, от которого будем наследоваться
+
+
+# регистрируем наши модели для перевода
+
+@register(Category)
+class CategoryTranslationOptions(TranslationOptions):
+    fields = ('name',)  # указываем, какие именно поля надо переводить в виде кортежа
+
+
+@register(Post)
+class PostTranslationOptions(TranslationOptions):
+    fields = ('title', 'text')
+
+
+@register(Article)
+class ArticleTranslationOptions(TranslationOptions):
+    fields = ('title', 'content')

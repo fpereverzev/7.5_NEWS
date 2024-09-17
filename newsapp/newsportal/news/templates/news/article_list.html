@@ -6,22 +6,22 @@
     <title>Все статьи</title>
 </head>
 <body>
-    <header>
-        <h1>Все статьи</h1>
-    </header>
-    <main>
-        <ul>
-            {% for article in page_obj.object_list %}
-                <li>
-                    <a href="{% url 'news:article_detail' article.id %}">{{ article.title }}</a>
-                    <p>{{ article.content|slice:":100" }}...</p>
-                </li>
-            {% empty %}
-                <p>Статей нет.</p>
-            {% endfor %}
-        </ul>
+<header>
+    <h1>Все статьи</h1>
+</header>
+<main>
+    <ul>
+        {% for article in page_obj.object_list %}
+        <li>
+            <a href="{% url 'news:article_detail' article.id %}">{{ article.title }}</a>
+            <p>{{ article.content|slice:":100" }}...</p>
+        </li>
+        {% empty %}
+        <p>Статей нет.</p>
+        {% endfor %}
+    </ul>
 
-        <div class="pagination">
+    <div class="pagination">
             <span class="step-links">
                 {% if page_obj.has_previous %}
                     <a href="?page=1">&laquo; Первая</a>
@@ -37,10 +37,10 @@
                     <a href="?page={{ page_obj.paginator.num_pages }}">Последняя &raquo;</a>
                 {% endif %}
             </span>
-        </div>
-    </main>
-    <footer>
-        <a href="{% url 'news:home' %}">На главную</a>
-    </footer>
+    </div>
+</main>
+<footer>
+    <a href="{% url 'news:home' %}">На главную</a>
+</footer>
 </body>
 </html>
