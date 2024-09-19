@@ -59,6 +59,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'allauth.account.middleware.AccountMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'newsportal.middlewares.TimezoneMiddleware',
     # 'django.middleware.cache.UpdateCacheMiddleware',
     # 'django.middleware.cache.FetchFromCacheMiddleware',
 ]

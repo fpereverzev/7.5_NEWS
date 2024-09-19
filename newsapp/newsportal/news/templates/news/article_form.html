@@ -1,10 +1,12 @@
 {% extends 'default.html' %}
 
+{% block title %}{% if object %}{% trans "Edit Article" %}{% else %}{% trans "Create Article" %}{% endif %}{% endblock %}
+
 {% block content %}
-  <h2>{% if object %}Edit Article{% else %}Create Article{% endif %}</h2>
-  <form method="post">
+<h2>{% if object %}{% trans "Edit Article" %}{% else %}{% trans "Create Article" %}{% endif %}</h2>
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
-  </form>
+    <button type="submit" class="btn btn-primary">{% trans "Save" %}</button>
+</form>
 {% endblock %}

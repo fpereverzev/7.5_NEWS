@@ -1,11 +1,15 @@
 {% extends 'default.html' %}
 
+{% block title %}Подтверждение удаления статьи{% endblock %}
+
 {% block content %}
-  <h2>Подтвердить удаление</h2>
-  <form method="post">
-    {% csrf_token %}
-    <p>Вы уверены, что хотите удалить статью "{{ article.title }}"?</p>
-    <button type="submit">Да, удалить</button>
-    <a href="{% url 'news:article_detail' article.id %}">Отмена</a>
-  </form>
+<main class="container">
+    <h2>{% trans "Подтвердить удаление" %}</h2>
+    <form method="post">
+        {% csrf_token %}
+        <p>{% trans "Вы уверены, что хотите удалить статью" %} "{{ article.title }}"?</p>
+        <button type="submit" class="btn btn-danger">{% trans "Да, удалить" %}</button>
+        <a href="{% url 'news:article_detail' article.id %}" class="btn btn-secondary">{% trans "Отмена" %}</a>
+    </form>
+</main>
 {% endblock %}

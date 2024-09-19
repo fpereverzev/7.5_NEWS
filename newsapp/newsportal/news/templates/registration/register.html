@@ -1,17 +1,16 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
-</head>
-<body>
-    <h1>Регистрация</h1>
+{% extends 'default.html' %}
+
+{% block title %}{% trans "Регистрация" %}{% endblock %}
+
+{% block content %}
+<header>
+    <h1>{% trans "Регистрация" %}</h1>
+</header>
+<main>
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Зарегистрироваться</button>
+        <button type="submit">{% trans "Зарегистрироваться" %}</button>
     </form>
-</body>
-</html>
+</main>
+{% endblock %}

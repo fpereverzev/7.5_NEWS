@@ -5,10 +5,28 @@ body {
     background: #f4f4f4;
 }
 
+body.day {
+    background: #f4f4f4; /* Светлый фон для дневной темы */
+    color: #000; /* Тёмный текст для дневной темы */
+}
+
+body.night {
+    background: #000; /* Тёмный фон для ночной темы */
+    color: #fff; /* Светлый текст для ночной темы */
+}
+
 header {
     background: #333;
     color: #fff;
     padding: 10px 0; /* Уменьшено расстояние сверху и снизу */
+}
+
+header.day {
+    background: #444; /* Светло-серый фон для заголовка в дневной теме */
+}
+
+header.night {
+    background: #222; /* Темно-серый фон для заголовка в ночной теме */
 }
 
 header .container {
@@ -33,7 +51,7 @@ nav {
 nav .btn {
     color: #fff;
     background: #007bff; /* Синий цвет для кнопок */
-    padding: 8px 16px; /* Уменьшено внутреннее отступы кнопок */
+    padding: 8px 16px; /* Уменьшено внутренние отступы кнопок */
     text-decoration: none;
     border-radius: 5px;
     font-size: 14px; /* Уменьшить размер шрифта в кнопках */
@@ -78,4 +96,12 @@ footer {
     color: #fff;
     text-align: center;
     padding: 10px 0;
+}
+
+footer.day {
+    background: #444; /* Светло-серый фон для подвала в дневной теме */
+}
+
+footer.night {
+    background: #222; /* Темно-серый фон для подвала в ночной теме */
 }

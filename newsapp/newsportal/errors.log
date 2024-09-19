@@ -2982,3 +2982,81 @@ Traceback (most recent call last):
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 7: 'trans', expected 'endblock'. Did you forget to register or load this tag?
 2024-09-17 07:43:40,926 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/articles/ HTTP/1.1" 500 184988
+2024-09-19 18:03:55,961 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'userprofile'
+2024-09-19 18:03:55,962 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 61891
+2024-09-19 18:04:53,471 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'userprofile'
+2024-09-19 18:04:53,472 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 62851
+2024-09-19 18:04:57,286 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /admin
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'userprofile'
+2024-09-19 18:04:57,286 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /admin HTTP/1.1" 500 62896
+2024-09-19 18:08:57,784 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'userprofile'
+2024-09-19 18:08:57,785 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 61891
+2024-09-19 18:17:23,945 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'userprofile'
+2024-09-19 18:17:23,945 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 61891
+2024-09-19 18:17:28,967 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'userprofile'
+2024-09-19 18:17:28,968 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 61891

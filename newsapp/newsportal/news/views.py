@@ -11,20 +11,20 @@ from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.utils.translation import gettext as _
-from django.utils.translation import get_language_from_request
 
 
 def home(request):
     categories = Category.objects.all()
-    posts_by_category = {}
-    for category in categories:
-        posts_by_category[category] = Post.objects.filter(categories=category).order_by('-dateCreation')
+    posts_by_category = {
+        category: Post.objects.filter(categories=category).order_by('-dateCreation')
+        for category in categories
+    }
 
     return render(request, 'news/default.html', {
         'categories': categories,
         'posts_by_category': posts_by_category,
         'user': request.user,
-        'redirect_to': request.path,  # Передаем текущий URL для редиректа
+        'redirect_to': request.path,
     })
 
 
@@ -43,8 +43,7 @@ def create_article(request):
             article.save()
             messages.success(request, _("Статья успешно создана."))
             return redirect('news:article_list')
-        else:
-            messages.error(request, _("Ошибка при создании статьи."))
+        messages.error(request, _("Ошибка при создании статьи."))
     else:
         form = ArticleForm()
 
@@ -69,8 +68,7 @@ def create_post(request):
 
             messages.success(request, _("Пост успешно создан."))
             return redirect('news:post_list')
-        else:
-            messages.error(request, _("Ошибка при создании поста."))
+        messages.error(request, _("Ошибка при создании поста."))
     else:
         form = PostForm()
 
@@ -97,8 +95,7 @@ def update_post(request, post_id):
 
             messages.success(request, _("Пост успешно обновлен."))
             return redirect('news:news_detail', post_id=post.id)
-        else:
-            messages.error(request, _("Ошибка при обновлении поста."))
+        messages.error(request, _("Ошибка при обновлении поста."))
     else:
         form = PostForm(instance=post)
 
@@ -112,9 +109,8 @@ def delete_post(request, post_id):
         post.delete()
         messages.success(request, _("Пост успешно удален."))
         return redirect('news:post_list')
-    else:
-        messages.error(request, _("У вас нет прав на удаление этого поста."))
-        return redirect('news:news_detail', post_id=post.id)
+    messages.error(request, _("У вас нет прав на удаление этого поста."))
+    return redirect('news:news_detail', post_id=post.id)
 
 
 @login_required
@@ -210,9 +206,8 @@ def delete_article(request, article_id):
         article.save()
         messages.success(request, _("Статья успешно удалена."))
         return redirect('news:article_list')
-    else:
-        messages.error(request, _("У вас нет прав на удаление этой статьи."))
-        return redirect('news:article_detail', article_id=article.id)
+    messages.error(request, _("У вас нет прав на удаление этой статьи."))
+    return redirect('news:article_detail', article_id=article.id)
 
 
 @login_required
@@ -228,8 +223,7 @@ def update_article(request, article_id):
             form.save()
             messages.success(request, _("Статья успешно обновлена."))
             return redirect('news:article_detail', article_id=article.id)
-        else:
-            messages.error(request, _("Ошибка при обновлении статьи."))
+        messages.error(request, _("Ошибка при обновлении статьи."))
     else:
         form = ArticleForm(instance=article)
 
@@ -253,5 +247,6 @@ class RegisterView(View):
                 fail_silently=False,
             )
             messages.success(request, _("Регистрация прошла успешно! Письмо отправлено на ваш email."))
-            return redirect('login')
+            return redirect(reverse_lazy('login'))
+        messages.error(request, _("Ошибка регистрации. Пожалуйста, попробуйте еще раз."))
         return render(request, 'registration/register.html', {'form': form})

@@ -1,28 +1,24 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ post_category.name }} - Посты</title>
-</head>
-<body>
-    <header>
-        <h1>Посты в категории "{{ post_category.name }}"</h1>
-    </header>
-    <main>
-        <ul>
-            {% for post in posts %}
-                <li>
-                    <a href="{% url 'news:news_detail' post.id %}">{{ post.title }}</a>
-                    <p>{{ post.content|slice:":100" }}...</p>
-                </li>
-            {% empty %}
-                <p>Постов в этой категории нет.</p>
-            {% endfor %}
-        </ul>
-    </main>
-    <footer>
-        <a href="{% url 'news:home' %}">На главную</a>
-    </footer>
-</body>
-</html>
+{% extends 'default.html' %}
+
+{% block title %}{{ post_category.name }} - Посты{% endblock %}
+
+{% block content %}
+<header>
+    <h1>{% trans "Посты в категории" %} "{{ post_category.name }}"</h1>
+</header>
+<main>
+    <ul>
+        {% for post in posts %}
+        <li>
+            <a href="{% url 'news:news_detail' post.id %}">{{ post.title }}</a>
+            <p>{{ post.content|slice:":100" }}...</p>
+        </li>
+        {% empty %}
+        <p>{% trans "Постов в этой категории нет." %}</p>
+        {% endfor %}
+    </ul>
+</main>
+<footer>
+    <a href="{% url 'news:home' %}">{% trans "На главную" %}</a>
+</footer>
+{% endblock %}

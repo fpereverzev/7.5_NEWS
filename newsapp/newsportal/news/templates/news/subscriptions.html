@@ -1,6 +1,11 @@
+{% extends 'default.html' %}
+
+{% load i18n %}
+
+{% block content %}
 <form method="post">
     {% csrf_token %}
-    <h2>Manage your subscriptions</h2>
+    <h2>{% trans "Управление вашими подписками" %}</h2>
     {% for category in categories %}
     <div>
         <label>
@@ -10,5 +15,6 @@
         </label>
     </div>
     {% endfor %}
-    <button type="submit">Update Subscriptions</button>
+    <button type="submit">{% trans "Обновить подписки" %}</button>
 </form>
+{% endblock %}

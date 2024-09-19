@@ -1,11 +1,11 @@
 {% extends 'default.html' %}
 
 {% block content %}
-  <h2>Редактировать статью</h2>
-  <form method="post">
+<h2>{% trans "Редактировать статью" %}</h2>
+<form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Сохранить изменения</button>
-  </form>
-  <a href="{% url 'news:article_detail' article.id %}">Отмена</a>
+    <button type="submit" class="btn btn-primary">{% trans "Сохранить изменения" %}</button>
+</form>
+<a href="{% url 'news:article_detail' article.id %}">{% trans "Отмена" %}</a>
 {% endblock %}

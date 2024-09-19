@@ -1,13 +1,10 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Все статьи</title>
-</head>
-<body>
+{% extends 'default.html' %}
+
+{% block title %}{% trans "All Articles" %}{% endblock %}
+
+{% block content %}
 <header>
-    <h1>Все статьи</h1>
+    <h1>{% trans "All Articles" %}</h1>
 </header>
 <main>
     <ul>
@@ -17,30 +14,29 @@
             <p>{{ article.content|slice:":100" }}...</p>
         </li>
         {% empty %}
-        <p>Статей нет.</p>
+        <p>{% trans "No articles." %}</p>
         {% endfor %}
     </ul>
 
     <div class="pagination">
-            <span class="step-links">
-                {% if page_obj.has_previous %}
-                    <a href="?page=1">&laquo; Первая</a>
-                    <a href="?page={{ page_obj.previous_page_number }}">Предыдущая</a>
-                {% endif %}
+        <span class="step-links">
+            {% if page_obj.has_previous %}
+                <a href="?page=1">&laquo; {% trans "First" %}</a>
+                <a href="?page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a>
+            {% endif %}
 
-                <span class="current">
-                    Страница {{ page_obj.number }} из {{ page_obj.paginator.num_pages }}.
-                </span>
-
-                {% if page_obj.has_next %}
-                    <a href="?page={{ page_obj.next_page_number }}">Следующая</a>
-                    <a href="?page={{ page_obj.paginator.num_pages }}">Последняя &raquo;</a>
-                {% endif %}
+            <span class="current">
+                {% trans "Page" %} {{ page_obj.number }} {% trans "of" %} {{ page_obj.paginator.num_pages }}.
             </span>
+
+            {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">{% trans "Next" %}</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">{% trans "Last" %} &raquo;</a>
+            {% endif %}
+        </span>
     </div>
 </main>
 <footer>
-    <a href="{% url 'news:home' %}">На главную</a>
+    <a href="{% url 'news:home' %}">{% trans "Home" %}</a>
 </footer>
-</body>
-</html>
+{% endblock %}

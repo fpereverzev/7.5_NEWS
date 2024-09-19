@@ -40,7 +40,7 @@
 
                     {% for language in languages %}
                     <option value="{{ language.code }}"
-                            {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {% if language.code== LANGUAGE_CODE %} selected{% endif %}>
                         {{ language.name_local }}
                     </option>
                     {% endfor %}
@@ -79,5 +79,23 @@
         <p>&copy; 2024 {% trans "News Portal" %}</p>
     </div>
 </footer>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const hour = new Date().getHours();
+        const body = document.body;
+        const header = document.querySelector('header');
+        const footer = document.querySelector('footer');
+
+        if (hour >= 6 && hour < 18) {
+            body.classList.add('day');
+            header.classList.add('day');
+            footer.classList.add('day');
+        } else {
+            body.classList.add('night');
+            header.classList.add('night');
+            footer.classList.add('night');
+        }
+    });
+</script>
 </body>
 </html>

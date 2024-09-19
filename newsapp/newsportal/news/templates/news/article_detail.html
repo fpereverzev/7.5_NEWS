@@ -1,28 +1,23 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ article.title }}</title>
-</head>
-<body>
+{% extends 'default.html' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+
+{% block content %}
 <header>
     <h1>{{ article.title }}</h1>
 </header>
-<main>
+<main class="container">
     <article>
         <p>{{ article.content }}</p>
-        <p><strong>Дата публикации:</strong> {{ article.published_date }}</p>
+        <p><strong>{% trans "Дата публикации:" %}</strong> {{ article.published_date }}</p>
     </article>
 
-
     <div>
-        <a href="{% url 'news:update_article' article.id %}">Редактировать</a>
-        <a href="{% url 'news:delete_article' article.id %}">Удалить</a>
+        <a href="{% url 'news:update_article' article.id %}" class="btn btn-primary">{% trans "Редактировать" %}</a>
+        <a href="{% url 'news:delete_article' article.id %}" class="btn btn-danger">{% trans "Удалить" %}</a>
     </div>
 </main>
 <footer>
-    <a href="{% url 'news:home' %}">На главную</a>
+    <a href="{% url 'news:home' %}" class="btn btn-secondary">{% trans "На главную" %}</a>
 </footer>
-</body>
-</html>
+{% endblock %}

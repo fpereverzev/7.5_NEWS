@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-09-15 06:57+0000\n"
+"POT-Creation-Date: 2024-09-19 17:13+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
 #: news/templates/news/default.html:6 news/templates/news/default.html:13
 #: news/templates/news/default.html:79
 msgid "News Portal"
@@ -54,7 +55,7 @@ msgstr "Login"
 msgid "Language"
 msgstr "Language"
 
-#: news/templates/news/default.html:36 newsportal/settings.py:121
+#: news/templates/news/default.html:36 newsportal/settings.py:122
 msgid "English"
 msgstr "English"
 
@@ -70,10 +71,101 @@ msgstr "Posts by Category"
 msgid "No posts."
 msgstr "No posts."
 
-#: news/views.py:33
+#: news/templates/news/subscriptions.html:4
+msgid "Manage your subscriptions"
+msgstr "Manage your subscriptions"
+
+
+#: news/templates/news/subscriptions.html:14
+msgid "Обновить подписки"
+msgstr "Update subscriptions"
+
+#: news/views.py:32
 msgid "Добро пожаловать на наш сайт!"
 msgstr "Welcome to our site!"
 
-#: newsportal/settings.py:122
+#: news/views.py:44
+msgid "Статья успешно создана."
+msgstr "Article created successfully"
+
+#: news/views.py:47
+msgid "Ошибка при создании статьи."
+msgstr "An error ocured while creating a article"
+
+#: news/views.py:70
+msgid "Пост успешно создан."
+msgstr "Post created successfully"
+
+#: news/views.py:73
+msgid "Ошибка при создании поста."
+msgstr "An error ocured while creating a post"
+
+#: news/views.py:84
+msgid "У вас нет прав на редактирование этого поста."
+msgstr "You dont have permission to edit this post"
+
+#: news/views.py:98
+msgid "Пост успешно обновлен."
+msgstr "Post updated successfully"
+
+#: news/views.py:101
+msgid "Ошибка при обновлении поста."
+msgstr "An error ocured while updating a post"
+
+#: news/views.py:113 news/views.py:129
+msgid "Пост успешно удален."
+msgstr "Post deleted successfully"
+
+#: news/views.py:116 news/views.py:124
+msgid "У вас нет прав на удаление этого поста."
+msgstr "You dont have permission to delete this post"
+
+#: news/views.py:144
+msgid "Подписки успешно обновлены."
+msgstr "Subscriptions updated successfully"
+
+#: news/views.py:165
+msgid "Article does not exist"
+msgstr "Статьи не существует"
+
+#: news/views.py:194
+msgid "Произошла ошибка."
+msgstr "An error ocured"
+
+#: news/views.py:211
+msgid "Статья успешно удалена."
+msgstr "Article deleted successfully"
+
+#: news/views.py:214
+msgid "У вас нет прав на удаление этой статьи."
+msgstr "You dont have permission to delete this article"
+
+#: news/views.py:222
+msgid "У вас нет прав на редактирование этой статьи."
+msgstr "You dont have permission to update this article"
+
+#: news/views.py:229
+msgid "Статья успешно обновлена."
+msgstr "Article updated successfully"
+
+#: news/views.py:232
+msgid "Ошибка при обновлении статьи."
+msgstr "An error occured while updating article"
+
+#: news/views.py:249
+msgid "Успешная регистрация"
+msgstr "Successfull registration"
+
+#: news/views.py:250
+#, fuzzy
+#| msgid "Добро пожаловать на наш сайт!"
+msgid "Вы успешно зарегистрировались на нашем сайте!"
+msgstr "Welcome to our site!"
+
+#: news/views.py:255
+msgid "Регистрация прошла успешно! Письмо отправлено на ваш email."
+msgstr "Registration successful! A confirmation email has been sent to you."
+
+#: newsportal/settings.py:123
 msgid "Russian"
 msgstr "Russian"
