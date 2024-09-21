@@ -3060,3 +3060,962 @@ Traceback (most recent call last):
            ^^^^^^^^^^^^^^^^^^^^^
 AttributeError: 'User' object has no attribute 'userprofile'
 2024-09-19 18:17:28,968 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 61891
+2024-09-21 06:26:29,953 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'userprofile'
+2024-09-21 06:26:29,953 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 61891
+2024-09-21 06:26:44,151 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'userprofile'
+2024-09-21 06:26:44,152 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 62714
+2024-09-21 06:26:44,339 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'User' object has no attribute 'userprofile'
+2024-09-21 06:26:44,340 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /favicon.ico HTTP/1.1" 500 62617
+2024-09-21 06:32:06,722 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 525, in __get__
+    raise self.RelatedObjectDoesNotExist(
+django.contrib.auth.models.User.userprofile.RelatedObjectDoesNotExist: User has no userprofile.
+2024-09-21 06:32:06,724 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET / HTTP/1.1" 500 67272
+2024-09-21 06:32:06,888 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /favicon.ico
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/newsportal/middlewares.py", line 11, in __call__
+    user_timezone = request.user.userprofile.timezone if request.user.is_authenticated else 'UTC'
+                    ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 253, in inner
+    return func(_wrapped, *args)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/fields/related_descriptors.py", line 525, in __get__
+    raise self.RelatedObjectDoesNotExist(
+django.contrib.auth.models.User.userprofile.RelatedObjectDoesNotExist: User has no userprofile.
+2024-09-21 06:32:06,889 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /favicon.ico HTTP/1.1" 500 67175
+2024-09-21 06:36:38,536 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 18, in home
+    posts_by_category = {
+                        ^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 19, in <dictcomp>
+    category: Post.objects.filter(categories=category).order_by('-dateCreation')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/modeltranslation/manager.py", line 352, in order_by
+    return super().order_by(*new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 1701, in order_by
+    obj.query.add_ordering(*field_names)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/query.py", line 2253, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'dateCreation' into field. Choices are: author, author_id, categories, category_type, comment, date_creation, id, postcategory, rating, text, text_en, text_ru, title, title_en, title_ru
+2024-09-21 06:36:38,537 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 87806
+2024-09-21 06:39:19,452 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 18, in home
+    posts_by_category = {
+                        ^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 19, in <dictcomp>
+    category: Post.objects.filter(categories=category).order_by('-date_сreation')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/modeltranslation/manager.py", line 352, in order_by
+    return super().order_by(*new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 1701, in order_by
+    obj.query.add_ordering(*field_names)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/query.py", line 2253, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'date_сreation' into field. Choices are: author, author_id, categories, category_type, comment, date_creation, id, postcategory, rating, text, text_en, text_ru, title, title_en, title_ru
+2024-09-21 06:39:19,454 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 87842
+2024-09-21 06:39:25,704 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 18, in home
+    posts_by_category = {
+                        ^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 19, in <dictcomp>
+    category: Post.objects.filter(categories=category).order_by('-date_сreation')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/modeltranslation/manager.py", line 352, in order_by
+    return super().order_by(*new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 1701, in order_by
+    obj.query.add_ordering(*field_names)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/query.py", line 2253, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'date_сreation' into field. Choices are: author, author_id, categories, category_type, comment, date_creation, id, postcategory, rating, text, text_en, text_ru, title, title_en, title_ru
+2024-09-21 06:39:25,705 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 87842
+2024-09-21 06:40:58,144 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 18, in home
+    posts_by_category = {
+                        ^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 19, in <dictcomp>
+    category: Post.objects.filter(categories=category).order_by('date_сreation')
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/modeltranslation/manager.py", line 352, in order_by
+    return super().order_by(*new_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/query.py", line 1701, in order_by
+    obj.query.add_ordering(*field_names)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/query.py", line 2253, in add_ordering
+    self.names_to_path(item.split(LOOKUP_SEP), self.model._meta)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/db/models/sql/query.py", line 1772, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'date_сreation' into field. Choices are: author, author_id, categories, category_type, comment, date_creation, id, postcategory, rating, text, text_en, text_ru, title, title_en, title_ru
+2024-09-21 06:40:58,145 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 87832
+2024-09-21 06:43:11,774 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'language.code=='
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 23, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 861, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 960, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 893, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 896, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '==' from 'language.code=='
+2024-09-21 06:43:11,775 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 228928
+2024-09-21 06:51:49,491 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /en/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 61, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 1000, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 1000, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 961, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 479, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/urls/base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/urls/resolvers.py", line 851, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'timezone_change' not found. 'timezone_change' is not a valid view function or pattern name.
+2024-09-21 06:51:49,493 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /en/ HTTP/1.1" 500 137367
+2024-09-21 06:59:48,232 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'language.code=='
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 861, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 960, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 893, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 896, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '==' from 'language.code=='
+2024-09-21 06:59:48,234 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 238849
+2024-09-21 07:00:10,835 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 62: 'endif'. Did you forget to register or load this tag?
+2024-09-21 07:00:10,836 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 173918
+2024-09-21 07:01:39,007 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'language.code=='
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 861, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 960, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 893, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 896, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '==' from 'language.code=='
+2024-09-21 07:01:39,009 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 238996
+2024-09-21 07:01:59,398 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 62: 'endif'. Did you forget to register or load this tag?
+2024-09-21 07:01:59,400 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 173718
+2024-09-21 07:02:27,516 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 62: 'endif'. Did you forget to register or load this tag?
+2024-09-21 07:02:27,517 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 172698
+2024-09-21 07:03:31,092 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'language.code=='
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 861, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 960, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 893, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 896, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '==' from 'language.code=='
+2024-09-21 07:03:31,094 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 237966
+2024-09-21 07:04:36,340 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 62: 'endif'. Did you forget to register or load this tag?
+2024-09-21 07:04:36,341 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 172898
+2024-09-21 07:06:31,146 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 63: 'endif'. Did you forget to register or load this tag?
+2024-09-21 07:06:31,147 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 172497
+2024-09-21 07:08:13,195 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'language.code=='
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 861, in do_for
+    nodelist_loop = parser.parse(
+                    ^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 510, in parse
+    raise self.error(token, e)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 508, in parse
+    compiled_result = compile_func(self, token)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 960, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 893, in __init__
+    super().__init__(*args, **kwargs)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/defaulttags.py", line 896, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 597, in compile_filter
+    return FilterExpression(token, self)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 698, in __init__
+    raise TemplateSyntaxError(
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '==' from 'language.code=='
+2024-09-21 07:08:13,197 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 237966
+2024-09-21 07:08:23,819 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /ru/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 502, in parse
+    compile_func = self.tags[command]
+                   ~~~~~~~~~^^^^^^^^^
+KeyError: 'endif'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 24, in home
+    return render(request, 'news/default.html', {
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/backends/django.py", line 33, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/loaders/base.py", line 28, in get_template
+    return Template(
+           ^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 196, in compile_nodelist
+    return parser.parse()
+           ^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 504, in parse
+    self.invalid_block_tag(token, command, parse_until)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/template/base.py", line 565, in invalid_block_tag
+    raise self.error(
+django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 62: 'endif'. Did you forget to register or load this tag?
+2024-09-21 07:08:23,819 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /ru/ HTTP/1.1" 500 172898

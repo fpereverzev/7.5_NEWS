@@ -10,14 +10,15 @@ from django.views import View
 from django.core.mail import send_mail
 from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
+from django.utils import timezone
 from django.utils.translation import gettext as _
 
 
 def home(request):
     categories = Category.objects.all()
     posts_by_category = {
-        category: Post.objects.filter(categories=category).order_by('-dateCreation')
-        for category in categories
+        category: Post.objects.filter(categories=category).order_by('date_creation')
+        for category in Category.objects.all()
     }
 
     return render(request, 'news/default.html', {
@@ -28,9 +29,14 @@ def home(request):
     })
 
 
-def example_view(request):
-    message = _("Добро пожаловать на наш сайт!")
-    return render(request, 'example.html', {'message': message})
+@login_required
+def change_timezone(request):
+    if request.method == 'POST':
+        timezone_name = request.POST.get('timezone')
+        if timezone_name:
+            request.user.userprofile.timezone = timezone_name  # Убедитесь, что это поле существует в профиле пользователя
+            request.user.userprofile.save()
+    return redirect(request.POST.get('next', 'news:home'))
 
 
 @login_required
@@ -241,12 +247,12 @@ class RegisterView(View):
             user = form.save()
             send_mail(
                 _('Успешная регистрация'),
-                _('Вы успешно зарегистрировались на нашем сайте!'),
-                'sfexample123@yandex.ru',
+                _('Вы успешно зарегистрировались!'),
+                'from@example.com',
                 [user.email],
                 fail_silently=False,
             )
-            messages.success(request, _("Регистрация прошла успешно! Письмо отправлено на ваш email."))
-            return redirect(reverse_lazy('login'))
-        messages.error(request, _("Ошибка регистрации. Пожалуйста, попробуйте еще раз."))
+            messages.success(request, _("Вы успешно зарегистрированы!"))
+            return redirect('news:home')
+        messages.error(request, _("Ошибка при регистрации."))
         return render(request, 'registration/register.html', {'form': form})

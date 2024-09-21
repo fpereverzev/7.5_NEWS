@@ -1,10 +1,11 @@
 from django.db import models
-from django.db.models import Sum, F
 from django.contrib.auth.models import User
+from django.db.models import Sum, F
 from django.dispatch import receiver
 from django.db.models.signals import post_save, post_delete
 from django.core.cache import cache
 from .tasks import send_notification
+
 
 # Модель для категорий
 class Category(models.Model):
@@ -13,6 +14,7 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
 # Модель для статей
 class Article(models.Model):
     title = models.CharField(max_length=200)
@@ -20,7 +22,7 @@ class Article(models.Model):
     published_date = models.DateTimeField(auto_now_add=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, null=True, blank=True)
     is_deleted = models.BooleanField(default=False)
-    author = models.ForeignKey(User, on_delete=models.CASCADE)  # Удалено значение по умолчанию
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self):
         return self.title
@@ -33,13 +35,37 @@ class Article(models.Model):
         self.is_deleted = True
         self.save()
 
+
 @receiver(post_save, sender=Article)
 def clear_cache_on_article_save(sender, instance, **kwargs):
     cache.set(f'article_{instance.id}', instance, timeout=None)
 
+
 @receiver(post_delete, sender=Article)
 def clear_cache_on_article_delete(sender, instance, **kwargs):
     cache.delete(f'article_{instance.id}')
+
+
+# Модель профиля пользователя
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    timezone = models.CharField(max_length=50, default='UTC')
+
+    def __str__(self):
+        return self.user.username
+
+
+# Автоматическое создание профиля пользователя
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        UserProfile.objects.create(user=instance)
+
+
+@receiver(post_save, sender=User)
+def save_user_profile(sender, instance, **kwargs):
+    instance.userprofile.save()
+
 
 # Модель для авторов
 class Author(models.Model):
@@ -55,6 +81,7 @@ class Author(models.Model):
 
         self.rating_author = p_rat * 3 + c_rat
         self.save()
+
 
 # Модель для постов
 class Post(models.Model):
@@ -86,10 +113,12 @@ class Post(models.Model):
     def __str__(self):
         return self.title
 
+
 @receiver(post_save, sender=Post)
 def notify_subscribers(sender, instance, created, **kwargs):
     if created and instance.category_type == Post.NEWS:
         send_notification.delay(instance.id)
+
 
 # Модель для связи постов и категорий
 class PostCategory(models.Model):
@@ -101,6 +130,7 @@ class PostCategory(models.Model):
 
     def __str__(self):
         return f"{self.post.title} - {self.category.name}"
+
 
 # Модель для комментариев
 class Comment(models.Model):
@@ -123,6 +153,7 @@ class Comment(models.Model):
 
     def __str__(self):
         return f"Comment by {self.user.username} on {self.post.title}"
+
 
 # Модель для подписчиков на категории
 class Subscriber(models.Model):

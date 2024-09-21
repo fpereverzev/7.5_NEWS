@@ -6,6 +6,16 @@
     <title>{% load i18n %} {% trans "News Portal" %}</title>
     {% load static %}
     <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <style>
+        body.dark-theme {
+            background-color: #121212;
+            color: #ffffff;
+        }
+        header.dark-theme, footer.dark-theme {
+            background-color: #333333;
+            color: #ffffff;
+        }
+    </style>
 </head>
 <body>
 <header>
@@ -27,25 +37,39 @@
             <form action="{% url 'set_language' %}" method="POST">
                 {% csrf_token %}
                 <input type="hidden" name="next" value="{{ redirect_to|default:'' }}">
-
                 <label for="language">
                     <span style="color: #adb5bd;">{% trans 'Language' %}:</span>
                 </label>
-
                 <select name="language" id="language" onchange="this.form.submit();">
                     <option value="none" hidden="">{% trans 'English' %}</option>
-
                     {% get_available_languages as LANGUAGES %}
                     {% get_language_info_list for LANGUAGES as languages %}
-
                     {% for language in languages %}
                     <option value="{{ language.code }}"
-                            {% if language.code== LANGUAGE_CODE %} selected{% endif %}>
+                            {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
                         {{ language.name_local }}
                     </option>
                     {% endfor %}
                 </select>
             </form>
+        </div>
+        <div class="timezone-selector">
+            <form method="post" action="{% url 'timezone_change' %}">
+                {% csrf_token %}
+                <label for="timezone">{% trans "Select Timezone:" %}</label>
+                <select name="timezone" id="timezone" onchange="this.form.submit();">
+                    <option value="UTC" {% if user.userprofile.timezone==
+                    'UTC' %}selected{% endif %}>UTC</option>
+                    <option value="Europe/Moscow" {% if user.userprofile.timezone==
+                    'Europe/Moscow' %}selected{% endif %}>Europe/Moscow</option>
+                    <option value="America/New_York" {% if user.userprofile.timezone==
+                    'America/New_York' %}selected{% endif %}>America/New_York</option>
+                    <!-- Добавьте другие временные зоны по мере необходимости -->
+                </select>
+            </form>
+        </div>
+        <div class="theme-toggle">
+            <button id="theme-toggle">{% trans "Toggle Theme" %}</button>
         </div>
     </div>
 </header>
@@ -81,20 +105,19 @@
 </footer>
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        const hour = new Date().getHours();
+        const toggleButton = document.getElementById('theme-toggle');
         const body = document.body;
-        const header = document.querySelector('header');
-        const footer = document.querySelector('footer');
+        const currentTheme = localStorage.getItem('theme');
 
-        if (hour >= 6 && hour < 18) {
-            body.classList.add('day');
-            header.classList.add('day');
-            footer.classList.add('day');
-        } else {
-            body.classList.add('night');
-            header.classList.add('night');
-            footer.classList.add('night');
+        if (currentTheme) {
+            body.classList.add(currentTheme);
         }
+
+        toggleButton.addEventListener('click', () => {
+            body.classList.toggle('dark-theme');
+            const theme = body.classList.contains('dark-theme') ? 'dark-theme' : '';
+            localStorage.setItem('theme', theme);
+        });
     });
 </script>
 </body>
