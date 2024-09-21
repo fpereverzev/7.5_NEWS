@@ -1,5 +1,3 @@
-# urls.py
-
 from django.urls import path
 from . import views
 
@@ -22,4 +20,5 @@ urlpatterns = [
     path('post/<int:post_id>/confirm-delete/', views.confirm_delete_post, name='confirm_delete_post'),
     path('posts/<int:post_id>/delete/', views.delete_post, name='delete_post'),
     path('timezone/change/', views.change_timezone, name='timezone_change'),
+    # Убедитесь, что это определение в views.py
 ]

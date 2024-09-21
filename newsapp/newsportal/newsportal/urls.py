@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf.urls.i18n import i18n_patterns
 
 urlpatterns = [
-    # Не включаем маршруты администратора и другие, требующие i18n_patterns, в основном списке urlpatterns
+    # Ваши маршруты без i18n
 ]
 
 urlpatterns += i18n_patterns(
@@ -12,7 +12,7 @@ urlpatterns += i18n_patterns(
     path('accounts/', include('allauth.urls')),  # Подключение маршрутов allauth
 )
 
-# Добавляем маршруты для переключения языков вне i18n_patterns
+# Маршруты для переключения языков
 urlpatterns += [
     path('i18n/', include('django.conf.urls.i18n')),  # Подключение маршрутов для переключения языка
 ]

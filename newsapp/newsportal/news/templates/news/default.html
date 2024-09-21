@@ -58,12 +58,9 @@
                 {% csrf_token %}
                 <label for="timezone">{% trans "Select Timezone:" %}</label>
                 <select name="timezone" id="timezone" onchange="this.form.submit();">
-                    <option value="UTC" {% if user.userprofile.timezone==
-                    'UTC' %}selected{% endif %}>UTC</option>
-                    <option value="Europe/Moscow" {% if user.userprofile.timezone==
-                    'Europe/Moscow' %}selected{% endif %}>Europe/Moscow</option>
-                    <option value="America/New_York" {% if user.userprofile.timezone==
-                    'America/New_York' %}selected{% endif %}>America/New_York</option>
+                    <option value="UTC" {% if user.userprofile.timezone == 'UTC' %}selected{% endif %}>UTC</option>
+                    <option value="Europe/Moscow" {% if user.userprofile.timezone == 'Europe/Moscow' %}selected{% endif %}>Europe/Moscow</option>
+                    <option value="America/New_York" {% if user.userprofile.timezone == 'America/New_York' %}selected{% endif %}>America/New_York</option>
                     <!-- Добавьте другие временные зоны по мере необходимости -->
                 </select>
             </form>
