@@ -1,4 +1,5 @@
-{% extends "default.html" %}
+{% load i18n %}
+
 
 {% block title %}Создать статью{% endblock %}
 
@@ -20,7 +21,7 @@
             <select name="category" required id="id_category" class="form-control">
                 <option value="" selected>{% trans "Выберите категорию" %}</option>
                 {% for category in categories %}
-                    <option value="{{ category.id }}">{{ category.name }}</option>
+                <option value="{{ category.id }}">{{ category.name }}</option>
                 {% endfor %}
             </select>
         </div>

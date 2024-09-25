@@ -1,12 +1,5 @@
-{% extends 'default.html' %}
+{% load i18n %}
 
-{% block title %}
-    {% if object %}
-        {% trans "Edit News" %}
-    {% else %}
-        {% trans "Create News" %}
-    {% endif %}
-{% endblock %}
 
 {% block content %}
 <h2>{% if object %}{% trans "Edit News" %}{% else %}{% trans "Create News" %}{% endif %}</h2>

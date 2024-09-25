@@ -1,21 +1,20 @@
-{% extends 'default.html' %}
+{% load i18n %}
 
-{% block title %}{% trans "Articles in Category: " %}{{ category.name }}{% endblock %}
 
 {% block content %}
 <div class="container">
     <h1>{% trans "Articles in Category: " %}"{{ category.name }}"</h1>
     {% if articles %}
-        <ul>
-            {% for article in articles %}
-                <li>
-                    <a href="{% url 'news:article_detail' article.id %}">{{ article.title }}</a>
-                    <p>{{ article.published_date }}</p>
-                </li>
-            {% endfor %}
-        </ul>
+    <ul>
+        {% for article in articles %}
+        <li>
+            <a href="{% url 'news:article_detail' article.id %}">{{ article.title }}</a>
+            <p>{{ article.published_date }}</p>
+        </li>
+        {% endfor %}
+    </ul>
     {% else %}
-        <p>{% trans "No articles in this category." %}</p>
+    <p>{% trans "No articles in this category." %}</p>
     {% endif %}
 </div>
 {% endblock %}

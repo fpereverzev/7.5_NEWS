@@ -1,3 +1,4 @@
+import pytz
 from django.shortcuts import render, redirect, get_object_or_404
 from .forms import ArticleForm, PostForm
 from django.contrib.auth.decorators import login_required
@@ -8,10 +9,14 @@ from django.core.cache import cache
 from django.http import Http404, HttpResponse
 from django.views import View
 from django.core.mail import send_mail
-from django.urls import reverse_lazy
 from django.contrib.auth.forms import UserCreationForm
 from django.utils import timezone
 from django.utils.translation import gettext as _
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status, permissions
+from .models import Article, Category, Post
+from .serializers import ArticleSerializer, PostSerializer
 
 
 def home(request):
@@ -20,12 +25,16 @@ def home(request):
         category: Post.objects.filter(categories=category).order_by('date_creation')
         for category in Category.objects.all()
     }
+    if request.method == 'POST':
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('/')
 
     return render(request, 'news/default.html', {
         'categories': categories,
         'posts_by_category': posts_by_category,
         'user': request.user,
-        'redirect_to': request.path,
+        'current_time': timezone.localtime(timezone.now()),
+        'timezones': pytz.common_timezones
     })
 
 
@@ -37,6 +46,139 @@ def change_timezone(request):
             request.user.userprofile.timezone = timezone_name  # Убедитесь, что это поле существует в профиле пользователя
             request.user.userprofile.save()
     return redirect(request.POST.get('next', 'news:home'))
+
+
+class ArticleList(APIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get(self, request):
+        articles = Article.objects.filter(is_deleted=False)
+        serializer = ArticleSerializer(articles, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = ArticleSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(author=request.user)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ArticleListCreateView(APIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get(self, request):
+        articles = Article.objects.filter(is_deleted=False)  # Adjust based on your requirements
+        serializer = ArticleSerializer(articles, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = ArticleSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(author=request.user)  # Ensure this field exists in your model
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class ArticleDetailView(APIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get(self, request, article_id):
+        article = get_object_or_404(Article, id=article_id)
+        if article.is_deleted:
+            return Response({"detail": "Article not found."}, status=status.HTTP_404_NOT_FOUND)
+        serializer = ArticleSerializer(article)
+        return Response(serializer.data)
+
+    def put(self, request, article_id):
+        article = get_object_or_404(Article, id=article_id)
+        if request.user != article.author:
+            return Response({"detail": "You do not have permission to edit this article."},
+                            status=status.HTTP_403_FORBIDDEN)
+        serializer = ArticleSerializer(article, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, article_id):
+        article = get_object_or_404(Article, id=article_id)
+        if request.user != article.author:
+            return Response({"detail": "You do not have permission to delete this article."},
+                            status=status.HTTP_403_FORBIDDEN)
+        article.is_deleted = True
+        article.save()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class PostList(APIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get(self, request):
+        posts = Post.objects.all()
+        serializer = PostSerializer(posts, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            author, created = Author.objects.get_or_create(authorUser=request.user)
+            post = serializer.save(author=author)
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class PostDetail(APIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get(self, request, post_id):
+        post = get_object_or_404(Post, id=post_id)
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
+
+    def put(self, request, post_id):
+        post = get_object_or_404(Post, id=post_id)
+        if request.user != post.author.authorUser:
+            return Response({"detail": "You do not have permission to edit this post."},
+                            status=status.HTTP_403_FORBIDDEN)
+        serializer = PostSerializer(post, data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def delete(self, request, post_id):
+        post = get_object_or_404(Post, id=post_id)
+        if request.user != post.author.authorUser:
+            return Response({"detail": "You do not have permission to delete this post."},
+                            status=status.HTTP_403_FORBIDDEN)
+        post.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+class NewsListCreateView(APIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get(self, request):
+        news = Post.objects.all()  # Или используйте нужный вам фильтр
+        serializer = PostSerializer(news, many=True)
+        return Response(serializer.data)
+
+    def post(self, request):
+        serializer = PostSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save(author=request.user)  # Убедитесь, что поле author существует
+            return Response(serializer.data, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class NewsDetailView(APIView):
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    def get(self, request, post_id):
+        post = get_object_or_404(Post, id=post_id)
+        serializer = PostSerializer(post)
+        return Response(serializer.data)
 
 
 @login_required

@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import NewsListCreateView, NewsDetailView, ArticleListCreateView, ArticleDetailView
 
 app_name = 'news'
 
@@ -20,5 +21,10 @@ urlpatterns = [
     path('post/<int:post_id>/confirm-delete/', views.confirm_delete_post, name='confirm_delete_post'),
     path('posts/<int:post_id>/delete/', views.delete_post, name='delete_post'),
     path('timezone/change/', views.change_timezone, name='timezone_change'),
-    # Убедитесь, что это определение в views.py
+
+    path('api/news/', NewsListCreateView.as_view(), name='api_news_list_create'),  # для GET и POST новостей
+    path('api/news/<int:pk>/', NewsDetailView.as_view(), name='api_news_detail'),  # для GET, PUT, DELETE одной новости
+    path('api/articles/', ArticleListCreateView.as_view(), name='api_article_list_create'),  # для GET и POST статей
+    path('api/articles/<int:pk>/', ArticleDetailView.as_view(), name='api_article_detail'),
+
 ]

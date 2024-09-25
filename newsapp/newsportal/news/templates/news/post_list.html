@@ -1,4 +1,4 @@
-{% extends 'default.html' %}
+{% load i18n %}
 
 {% block title %}Все посты{% endblock %}
 
@@ -9,30 +9,30 @@
 <main>
     <ul>
         {% for post in page_obj.object_list %}
-            <li>
-                <a href="{% url 'news:news_detail' post.id %}">{{ post.title }}</a>
-                <p>{{ post.preview }}</p>
-                {% if request.user == post.author.authorUser or request.user.is_superuser %}
-                    <form action="{% url 'news:delete_post' post.id %}" method="post" style="display:inline;">
-                        {% csrf_token %}
-                        <button type="submit">{% trans "Удалить" %}</button>
-                    </form>
-                {% endif %}
-            </li>
+        <li>
+            <a href="{% url 'news:news_detail' post.id %}">{{ post.title }}</a>
+            <p>{{ post.preview }}</p>
+            {% if request.user == post.author.authorUser or request.user.is_superuser %}
+            <form action="{% url 'news:delete_post' post.id %}" method="post" style="display:inline;">
+                {% csrf_token %}
+                <button type="submit">{% trans "Удалить" %}</button>
+            </form>
+            {% endif %}
+        </li>
         {% empty %}
-            <p>{% trans "Постов нет." %}</p>
+        <p>{% trans "Постов нет." %}</p>
         {% endfor %}
     </ul>
     <div class="pagination">
         <span>{% trans "Страница" %} {{ page_obj.number }} {% trans "из" %} {{ page_obj.paginator.num_pages }}</span>
         <div>
             {% if page_obj.has_previous %}
-                <a href="?page=1">{% trans "Первая" %}</a>
-                <a href="?page={{ page_obj.previous_page_number }}>{% trans "Назад" %}</a>
+            <a href="?page=1">{% trans "Первая" %}</a>
+            <a href="?page={{ page_obj.previous_page_number }}>{% trans " Назад" %}</a>
             {% endif %}
             {% if page_obj.has_next %}
-                <a href="?page={{ page_obj.next_page_number }}">{% trans "Вперед" %}</a>
-                <a href="?page={{ page_obj.paginator.num_pages }}">{% trans "Последняя" %}</a>
+            <a href="?page={{ page_obj.next_page_number }}">{% trans "Вперед" %}</a>
+            <a href="?page={{ page_obj.paginator.num_pages }}">{% trans "Последняя" %}</a>
             {% endif %}
         </div>
     </div>

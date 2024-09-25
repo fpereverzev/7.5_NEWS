@@ -1,15 +1,16 @@
-{% extends 'default.html' %}
+{% load i18n %}
+
 
 {% block content %}
 <h2>{% trans "News List" %}</h2>
 {% for article in page_obj %}
-    <div>
-        <h3><a href="{% url 'news:news_detail' article.id %}">{{ article.title }}</a></h3>
-        <p>{{ article.published_date }}</p>
-        <p>{{ article.content|truncatewords:30 }}</p>
-    </div>
+<div>
+    <h3><a href="{% url 'news:news_detail' article.id %}">{{ article.title }}</a></h3>
+    <p>{{ article.published_date }}</p>
+    <p>{{ article.content|truncatewords:30 }}</p>
+</div>
 {% empty %}
-    <p>{% trans "No news available." %}</p>
+<p>{% trans "No news available." %}</p>
 {% endfor %}
 
 <div class="pagination">
