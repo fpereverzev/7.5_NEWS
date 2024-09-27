@@ -162,7 +162,7 @@ class NewsListCreateView(APIView):
     def get(self, request):
         news = Post.objects.all()  # Или используйте нужный вам фильтр
         serializer = PostSerializer(news, many=True)
-        return Response(serializer.data)
+        return render(request, 'news/api_news.html', {'posts': serializer.data})
 
     def post(self, request):
         serializer = PostSerializer(data=request.data)

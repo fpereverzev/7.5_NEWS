@@ -4917,3 +4917,63 @@ Traceback (most recent call last):
     raise new from exc
 django.template.exceptions.TemplateDoesNotExist: default.html
 2024-09-23 06:18:20,925 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /category/1/ HTTP/1.1" 500 134120
+2024-09-27 17:02:05,638 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/log.py Internal Server Error: /api/articles/
+Traceback (most recent call last):
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/decorators/csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/views/generic/base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/7.5_NEW-master-master/newsapp/newsportal/news/views.py", line 73, in get
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 795, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 713, in to_representation
+    return [
+           ^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 523, in to_representation
+    for field in fields:
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/utils/functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+                                ^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/rest_framework/serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `created_at` is not valid for model `Article` in `news.serializers.ArticleSerializer`.
+2024-09-27 17:02:05,640 ERROR /Users/macp/Desktop/SFfpw/newsportD2/venvp/lib/python3.11/site-packages/django/core/servers/basehttp.py "GET /api/articles/ HTTP/1.1" 500 146222
